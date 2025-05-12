@@ -3,7 +3,6 @@ package main
 import (
 	"fmt"
 	"io"
-	"io/ioutil"
 	"os"
 )
 
@@ -26,7 +25,7 @@ func main() {
 }
 
 func readFile(filname string) {
-	databyte, err := ioutil.ReadFile(filname)
+	databyte, err := os.ReadFile(filname)
 	checkNilErr(err)
 
 	fmt.Println("Text data inside the file is \n", string(databyte))
